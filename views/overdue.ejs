@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overdue</title>
+    <link rel="stylesheet" href="../public/style.css">
+    <script src="https://kit.fontawesome.com/dd8ca4d5e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../IMG/Logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <!-- Display the logged-in user's name dynamically -->
+                    <span class="name"><%= user ? user.username : 'Guest' %></span>
+                    <span class="profession"><%= user ? user.role : '' %></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class="fa-solid fa-magnifying-glass icon"></i>
+                    <input type="search" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/home">
+                            <i class="fa-solid fa-house icon"></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/books">
+                            <i class="fa-solid fa-book icon"></i>
+                            <span class="text nav-text">Books</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/checkout">
+                            <i class="fa-solid fa-list icon"></i>
+                            <span class="text nav-text">Checkout</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/overdue">
+                            <i class="fa-solid fa-clock icon"></i>
+                            <span class="text nav-text">Overdue Book</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/reports">
+                            <i class="fa-solid fa-flag icon"></i>
+                            <span class="text nav-text">Report</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="nav-link">
+                    <a href="/logout">
+                        <i class="fa-solid fa-right-from-bracket icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="overdue-section">
+            <h2>Overdue Books</h2>
+            <table class="overdue-table">
+                <thead>
+                    <tr>
+                        <th>Book Name</th>
+                        <th>Date Taken Out</th>
+                        <th>Expected Return</th>
+                        <th>Days Overdue</th>
+                        <th>Fine (per day)</th>
+                        <th>Total Fine</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (overdueBooks.length > 0) { %>
+                        <% overdueBooks.forEach(function(book) { %>
+                            <tr>
+                                <td><%= book.title %></td>
+                                <td><%= book.takenOutDate %></td>
+                                <td><%= book.expectedReturnDate %></td>
+                                <td><%= book.daysOverdue %></td>
+                                <td>$<%= book.finePerDay.toFixed(2) %></td>
+                                <td>$<%= (book.daysOverdue * book.finePerDay).toFixed(2) %></td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="6">No overdue books found</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary-section">
+            <div class="summary-item">
+                <h3>Total Overdue Books</h3>
+                <p><%= overdueBooks.length %></p>
+            </div>
+            <div class="summary-item">
+                <h3>Total Fines</h3>
+                <p>$<%= totalFines.toFixed(2) %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

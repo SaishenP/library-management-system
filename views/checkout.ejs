@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="../public/style.css">
+    <script src="https://kit.fontawesome.com/dd8ca4d5e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="../IMG/Logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Saishen Pillay</span>
+                    <span class="profession">Student</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                    <li class="search-box">
+                            <i class="fa-solid fa-magnifying-glass icon"></i>
+                            <input type="search" placeholder="Search...">
+                    </li>
+                <ul class="menu-links"></ul>
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class="fa-solid fa-house icon" ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="books.html">
+                            <i class="fa-solid fa-book icon"></i>
+                            <span class="text nav-text">Books</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="checkout.html">
+                            <i class="fa-solid fa-list icon"></i>
+                            <span class="text nav-text">Checkout</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="overdue.html">
+                            <i class="fa-solid fa-clock icon"></i>
+                            <span class="text nav-text">Overdue Book</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="reports.html">
+                            <i class="fa-solid fa-flag icon"></i>
+                            <span class="text nav-text">Report</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="nav-link">
+                    <a href="#">
+                        <i class="fa-solid fa-right-from-bracket icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+
+        </div>
+        
+    </nav>
+
+    <div class="main-content">
+        <div class="checkout-content">
+            <h2>Checkout Details</h2>
+            <div class="table-container">
+                <table class="checkout-table">
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>ISBN</th>
+                            <th>Taking Out Date</th>
+                            <th>Expected Return Date</th>
+                            <th>Member ID</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>The Great Gatsby</td>
+                            <td>978-0743273565</td>
+                            <td>2024-08-10</td>
+                            <td>2024-08-24</td>
+                            <td>12345</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>The Great Gatsby</td>
+                            <td>978-0743273565</td>
+                            <td>2024-08-10</td>
+                            <td>2024-08-24</td>
+                            <td>12345</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>The Great Gatsby</td>
+                            <td>978-0743273565</td>
+                            <td>2024-08-10</td>
+                            <td>2024-08-24</td>
+                            <td>12345</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                            </td>
+                        </tr>
+                        <!-- More rows can be added here -->
+                    </tbody>
+                </table>
+            </div>
+         <div class="checkout-button-container">
+            <button class="checkout-btn">Checkout</button>
+         </div>
+        </div>
+    </div>
+    
+</body>
+</html>
